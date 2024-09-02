@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>EmClips.al</h1>
+        <nav>
+            <a href="#" onclick="showSection('products')">Products</a>
+            <a href="#" onclick="showSection('cart')">Cart (<span id="cart-count">0</span>)</a>
+            <input type="text" id="search" placeholder="Search products..." oninput="searchProducts()" />
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Products</h2>
+            <div id="product-list"></div>
+        </section>
+        
+        <section id="cart" style="display:none;">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total"></p>
+            <button id="checkout-button" onclick="checkout()">Checkout</button>
+        </section>
+
+        <section id="checkout" style="display:none;">
+            <h2>Checkout</h2>
+            <form id="checkout-form" onsubmit="submitOrder(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Elis Metaliaj</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
